@@ -12,3 +12,11 @@ cd acme.sh-acme
 ```bash
 apt install nginx -y
 ```
+#curl the server
+```bash
+http://185.235.43.181/
+```
+If the nginx web page doesnt show, make sure the port 80 is open:
+```bash
+ufw allow from any to any port 80
+```
