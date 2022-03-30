@@ -45,3 +45,43 @@ Add the Domain with TXT value to your DNS list and then run:
 ./acme.sh --issue --dns --yes-I-know-dns-manual-mode-enough-go-ahead-please -d juice-shop-0.net -d juice-shop-1.net -m ramin.fathollahzadeh@gmail.com
 ```
 
+#Set up nginx to use certs
+DNS1:
+```bash
+cd /etc/nginx/sites-enabled/ 
+touch juice-shop-0.net
+nano juice-shop-0.net
+```
+Fill it as below:
+```bash
+server {
+  listen 443 ssl;
+  server_name juice-shop-0.net;
+  ssl_certificate root/.acme.sh/plabs.pro/fullchain.cer;
+  ssl_certificate_key root/.acme.sh/plabs.pro/juice-shop-0.net.key;
+}
+```
+DNS2:
+```bash
+touch juice-shop-1.net
+nano juice-shop-1.net
+```
+Fill it as below:
+```bash
+server {
+  listen 443 ssl;
+  server_name juice-shop-1.net;
+  ssl_certificate /root/.acme.sh/plabs.pro/fullchain.cer;
+  ssl_certificate_key /root/.acme.sh/plabs.pro/juice-shop-1.net.key;
+}
+
+```
+
+#Checkout syntax:
+```bash
+nginx -t
+```
+and then:
+```bash
+systemctl reload nginx 
+```
