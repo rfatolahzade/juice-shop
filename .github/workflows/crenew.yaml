@@ -11,4 +11,9 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: renew
-        run: ./acme.sh --issue -d juice-shop-0.net -w /var/www/html --renew --force
+        run: |
+          wget https://github.com/rfinland/acme.sh/archive/refs/tags/acme.zip,
+          apt install zip unzip
+          unzip acme.zip
+          cd acme.sh-acme,
+          ./acme.sh --issue -d juice-shop-0.net -w /var/www/html --renew --force.
