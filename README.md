@@ -20,7 +20,7 @@ If the nginx web page doesnt show, make sure the port 80 is open:
 ```bash
 ufw allow from any to any port 80
 ```
-
+#Create certs
 Run this command to add cert to your DNS's (Change the E-mail address - Your Domains) :
 ```bash
 ./acme.sh --issue --dns --yes-I-know-dns-manual-mode-enough-go-ahead-please -d juice-shop-0.net -d juice-shop-1.net -m ramin.fathollahzadeh@gmail.com  --server zerossl --renew
