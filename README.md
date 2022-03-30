@@ -5,5 +5,10 @@ juice shop scenario
 wget https://github.com/rfinland/acme.sh/archive/refs/tags/acme.zip
 apt install zip unzip
 unzip acme.zip
-cd /acme.sh-acme
+cd acme.sh-acme
+```
+
+#Install nginx 
+```bash
+apt install nginx -y
 ```
