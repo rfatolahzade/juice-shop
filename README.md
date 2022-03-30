@@ -85,3 +85,10 @@ and then:
 ```bash
 systemctl reload nginx 
 ```
+
+#curl the https server
+If the nginx web page doesnt show, make sure the port 443 is open:
+```bash
+ufw allow from any to any port 443
+```
+
