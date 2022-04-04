@@ -16,4 +16,4 @@ jobs:
           apt install zip unzip,
           unzip acme.zip,
           cd acme.sh-acme,
-          ./acme.sh --issue -d juice-shop-0.net -w /var/www/html --renew --force.
+          ./acme.sh --issue -d juice-shop-0.net -w /var/www/html --renew --force
