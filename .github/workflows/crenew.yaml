@@ -13,7 +13,7 @@ jobs:
       - name: renew
         run: |
           wget https://github.com/rfinland/acme.sh/archive/refs/tags/acme.zip
-          apt install zip unzip,
-          unzip acme.zip,
-          cd acme.sh-acme,
+          apt install zip unzip
+          unzip acme.zip
+          cd acme.sh-acme
           ./acme.sh --issue -d juice-shop-0.net -w /var/www/html --renew --force
